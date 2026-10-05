@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resume Builder – PlacePrep</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html"><span class="brand-mark">P</span> PlacePrep</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aptitude.html">Aptitude</a></li>
+        <li><a href="coding.html">Coding</a></li>
+        <li><a class="active" href="resume.html">Resume</a></li>
+        <li><a href="interview.html">Interview</a></li>
+        <li><a href="progress.html">Progress</a></li>
+      </ul>
+      <div class="nav-tools">
+        <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode">🌙</button>
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container page-title">
+      <h1>Resume Builder</h1>
+      <p class="muted">Your details are saved in this browser only. The preview updates as you type.</p>
+    </div>
+
+    <section class="section" style="padding-top:20px">
+      <div class="container resume-layout">
+
+        <!-- FORM -->
+        <form class="card" id="resumeForm" onsubmit="return false">
+          <div class="form-grid">
+            <div><label class="lbl" for="name">Full name</label><input class="input" id="name" placeholder="Aarav Sharma"></div>
+            <div><label class="lbl" for="role">Target role</label><input class="input" id="role" placeholder="Software Engineer"></div>
+            <div><label class="lbl" for="email">Email</label><input class="input" id="email" type="email" placeholder="aarav@example.com"></div>
+            <div><label class="lbl" for="phone">Phone</label><input class="input" id="phone" placeholder="+91 98765 43210"></div>
+            <div class="full"><label class="lbl" for="links">LinkedIn / GitHub</label><input class="input" id="links" placeholder="github.com/aarav · linkedin.com/in/aarav"></div>
+            <div class="full">
+              <label class="lbl" for="summary">Career summary</label>
+              <textarea class="input" id="summary" placeholder="Final-year B.Tech student with strong skills in…"></textarea>
+            </div>
+            <div><label class="lbl" for="degree">Degree</label><input class="input" id="degree" placeholder="B.Tech, Computer Science"></div>
+            <div><label class="lbl" for="college">College</label><input class="input" id="college" placeholder="ABC Institute of Technology"></div>
+            <div><label class="lbl" for="gradYear">Graduation year</label><input class="input" id="gradYear" placeholder="2027"></div>
+            <div><label class="lbl" for="cgpa">CGPA / %</label><input class="input" id="cgpa" placeholder="8.4 CGPA"></div>
+            <div class="full">
+              <label class="lbl" for="skills">Skills (comma separated)</label>
+              <input class="input" id="skills" placeholder="JavaScript, Python, SQL, React, Git">
+            </div>
+          </div>
+
+          <h3 style="margin:20px 0 8px">Projects</h3>
+          <div id="projects"></div>
+          <button class="btn btn-ghost btn-sm" type="button" id="addProject">+ Add project</button>
+
+          <div class="form-grid" style="margin-top:16px">
+            <div class="full">
+              <label class="lbl" for="extras">Certifications / achievements (one per line)</label>
+              <textarea class="input" id="extras" placeholder="Winner – College Hackathon 2026&#10;Python for Everybody – Coursera"></textarea>
+            </div>
+            <div><label class="lbl" for="color">Accent colour</label>
+              <select class="input" id="color">
+                <option value="#14213d">Navy</option>
+                <option value="#0f766e">Teal</option>
+                <option value="#c2410c">Burnt orange</option>
+                <option value="#6d28d9">Purple</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="btn-row">
+            <button class="btn" type="button" id="printBtn">⬇ Save as PDF / Print</button>
+            <button class="btn btn-ghost" type="button" id="sampleBtn">Fill sample data</button>
+            <button class="btn btn-outline" type="button" id="clearBtn">Clear all</button>
+          </div>
+        </form>
+
+        <!-- PREVIEW + SCORE -->
+        <div>
+          <div class="card" style="margin-bottom:20px">
+            <div style="display:flex;justify-content:space-between;align-items:baseline">
+              <h3>Resume score</h3><b id="scoreText" style="font-size:1.4rem">0%</b>
+            </div>
+            <div class="score-bar"><div id="scoreFill"></div></div>
+            <ul class="checklist" id="checklist"></ul>
+          </div>
+          <div class="resume-paper" id="resumePreview" aria-label="Resume preview"></div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>© <span id="year2"></span> PlacePrep · Built with the help of Generative AI</div>
+      <div><a href="index.html">Home</a> · <a href="interview.html">Interview prep</a></div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/resume.js"></script>
+  <script>document.getElementById("year2").textContent = new Date().getFullYear();</script>
+</body>
+</html>

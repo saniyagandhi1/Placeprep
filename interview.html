@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mock Interview – PlacePrep</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html"><span class="brand-mark">P</span> PlacePrep</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aptitude.html">Aptitude</a></li>
+        <li><a href="coding.html">Coding</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a class="active" href="interview.html">Interview</a></li>
+        <li><a href="progress.html">Progress</a></li>
+      </ul>
+      <div class="nav-tools">
+        <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode">🌙</button>
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container page-title">
+      <h1>Mock Interview</h1>
+      <p class="muted">Read the question, answer out loud against the timer, then flip the card to compare with sample guidance.</p>
+    </div>
+
+    <section class="section" style="padding-top:20px">
+      <div class="container" style="max-width:820px">
+
+        <div class="toolbar">
+          <select class="input" id="intCat" aria-label="Question category"></select>
+          <span class="muted" id="intCounter"></span>
+        </div>
+
+        <div class="flash" id="flash" tabindex="0" role="button" aria-label="Flip card to see sample answer">
+          <div class="flash-inner">
+            <div class="flash-face flash-front">
+              <span class="badge" id="intBadge" style="margin-bottom:14px"></span>
+              <h3 id="intQ">Press “New question” to begin</h3>
+              <small>Click the card to see sample guidance</small>
+            </div>
+            <div class="flash-face flash-back">
+              <b class="lab">How to answer</b>
+              <p id="intA"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="int-bar">
+          <button class="btn" id="newBtn">🎲 New question</button>
+          <button class="btn btn-outline" id="timerBtn">▶ Start 2:00 timer</button>
+          <span class="int-timer" id="intTimer">02:00</span>
+          <button class="btn btn-ghost" id="doneBtn" style="margin-left:auto">✔ Mark as practiced</button>
+        </div>
+
+        <div class="grid-2" style="margin-top:28px">
+          <div class="card">
+            <h3 style="margin-bottom:8px">📝 Your notes</h3>
+            <textarea class="input" id="notes" placeholder="Jot down your answer outline here (saved for this question)…" style="min-height:170px"></textarea>
+          </div>
+          <div class="card">
+            <h3 style="margin-bottom:8px">⭐ The STAR method</h3>
+            <ul style="list-style:none;display:grid;gap:8px">
+              <li><b>S</b>ituation – set the scene briefly.</li>
+              <li><b>T</b>ask – what was your responsibility?</li>
+              <li><b>A</b>ction – what did <i>you</i> do, step by step?</li>
+              <li><b>R</b>esult – the outcome, with numbers if possible.</li>
+            </ul>
+            <p class="muted" style="margin-top:12px">Aim for 60–90 seconds per answer.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>© <span id="year"></span> PlacePrep · Built with the help of Generative AI</div>
+      <div><a href="index.html">Home</a> · <a href="progress.html">Progress</a></div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/interview.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coding Practice – PlacePrep</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html"><span class="brand-mark">P</span> PlacePrep</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aptitude.html">Aptitude</a></li>
+        <li><a class="active" href="coding.html">Coding</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="interview.html">Interview</a></li>
+        <li><a href="progress.html">Progress</a></li>
+      </ul>
+      <div class="nav-tools">
+        <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode">🌙</button>
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container page-title">
+      <h1>Coding Practice</h1>
+      <p class="muted">Write a JavaScript function, press <b>Run tests</b>, and solve it when every test passes. <span id="solvedCount" style="font-weight:700"></span></p>
+    </div>
+
+    <section class="section" style="padding-top:20px">
+      <div class="container code-layout">
+
+        <!-- Problem list -->
+        <aside>
+          <div class="toolbar">
+            <input class="input" id="probSearch" type="search" placeholder="Search problems…" aria-label="Search problems">
+            <select class="input" id="probDiff" aria-label="Filter by difficulty">
+              <option value="all">All levels</option>
+              <option value="easy">Easy</option>
+              <option value="medium">Medium</option>
+              <option value="hard">Hard</option>
+            </select>
+          </div>
+          <div class="problem-list" id="problemList"></div>
+        </aside>
+
+        <!-- Problem detail -->
+        <div class="card" id="detail">
+          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:8px">
+            <h2 id="pTitle"></h2>
+            <span class="badge" id="pDiff"></span>
+            <span class="badge" id="pTopic"></span>
+          </div>
+          <p id="pDesc" style="margin-bottom:12px"></p>
+
+          <details class="box"><summary>💡 Show hint</summary><p id="pHint" style="margin-top:8px"></p></details>
+
+          <label class="lbl" for="editor" style="margin-top:16px">Your solution (JavaScript)</label>
+          <textarea class="editor" id="editor" spellcheck="false" autocapitalize="off" autocomplete="off"></textarea>
+
+          <div class="btn-row">
+            <button class="btn" id="runBtn">▶ Run tests</button>
+            <button class="btn btn-ghost" id="resetBtn">Reset code</button>
+            <button class="btn btn-outline" id="solBtn">Show solution</button>
+          </div>
+
+          <div class="results" id="results" aria-live="polite"></div>
+          <pre class="sol hidden" id="solution"></pre>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>© <span id="year"></span> PlacePrep · Built with the help of Generative AI</div>
+      <div><a href="index.html">Home</a> · <a href="progress.html">Progress</a></div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/coding.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aptitude Quiz – PlacePrep</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html"><span class="brand-mark">P</span> PlacePrep</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="aptitude.html">Aptitude</a></li>
+        <li><a href="coding.html">Coding</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="interview.html">Interview</a></li>
+        <li><a href="progress.html">Progress</a></li>
+      </ul>
+      <div class="nav-tools">
+        <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode">🌙</button>
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container page-title">
+      <h1>Aptitude Quiz</h1>
+      <p class="muted">Pick a round. You get 30 seconds per question, instant feedback and a short explanation.</p>
+    </div>
+
+    <section class="section" style="padding-top:20px">
+      <div class="container quiz-shell">
+
+        <!-- Start screen -->
+        <div id="startScreen">
+          <div class="cat-picker" id="catPicker"></div>
+          <div style="text-align:center">
+            <button class="btn" id="startBtn">Start quiz</button>
+            <p class="muted" id="bestLine" style="margin-top:14px"></p>
+          </div>
+        </div>
+
+        <!-- Question screen -->
+        <div class="card hidden" id="quizScreen">
+          <div class="quiz-top">
+            <span id="qCounter">Question 1 / 10</span>
+            <span class="timer-pill" id="qTimer">00:30</span>
+          </div>
+          <div class="progress"><div id="qProgress"></div></div>
+          <div class="q-text" id="qText"></div>
+          <div class="options" id="qOptions"></div>
+          <div class="explain hidden" id="qExplain"></div>
+          <div class="quiz-actions">
+            <button class="btn" id="nextBtn" disabled>Next →</button>
+          </div>
+        </div>
+
+        <!-- Result screen -->
+        <div class="card hidden" id="resultScreen" style="text-align:center">
+          <h2 id="resTitle">Quiz complete</h2>
+          <div class="score-ring" id="scoreRing"><span id="resPct">0%</span></div>
+          <p id="resLine" style="font-size:1.1rem;font-weight:700"></p>
+          <p class="muted" id="resMsg" style="margin-bottom:18px"></p>
+          <div class="btn-row" style="justify-content:center">
+            <button class="btn" id="retryBtn">Try again</button>
+            <button class="btn btn-outline" id="reviewBtn">Review answers</button>
+            <a class="btn btn-ghost" href="progress.html">View progress</a>
+          </div>
+          <div class="hidden" id="reviewBox" style="text-align:left;margin-top:24px"></div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>© <span id="year"></span> PlacePrep · Built with the help of Generative AI</div>
+      <div><a href="index.html">Home</a> · <a href="progress.html">Progress</a></div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>

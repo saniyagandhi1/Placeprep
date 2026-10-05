@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PlacePrep – Placement Preparation Portal</title>
+  <meta name="description" content="Practice aptitude, coding, resume building and interviews in one place.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html"><span class="brand-mark">P</span> PlacePrep</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="aptitude.html">Aptitude</a></li>
+        <li><a href="coding.html">Coding</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="interview.html">Interview</a></li>
+        <li><a href="progress.html">Progress</a></li>
+      </ul>
+      <div class="nav-tools">
+        <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode">🌙</button>
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Campus placements 2026–27</span>
+          <h1>Get <span>placement-ready</span> one practice session at a time.</h1>
+          <p class="lead">Aptitude quizzes, a live coding sandbox, a resume builder and mock interviews — all in one portal, with progress tracked automatically.</p>
+          <div class="hero-actions">
+            <a class="btn" href="aptitude.html">Start a quiz</a>
+            <a class="btn btn-outline" href="coding.html">Solve a problem</a>
+          </div>
+        </div>
+        <div class="countdown-card" aria-live="polite">
+          <h3>Next campus drive</h3>
+          <div class="company" id="cdCompany">Loading…</div>
+          <div class="timer-row">
+            <div class="timer-box"><b id="cdDays">0</b><small>Days</small></div>
+            <div class="timer-box"><b id="cdHours">0</b><small>Hours</small></div>
+            <div class="timer-box"><b id="cdMins">0</b><small>Mins</small></div>
+            <div class="timer-box"><b id="cdSecs">0</b><small>Secs</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="container">
+      <div class="stats">
+        <div class="stat"><b data-count="quiz">0</b><span>Aptitude questions</span></div>
+        <div class="stat"><b data-count="code">0</b><span>Coding problems</span></div>
+        <div class="stat"><b data-count="interview">0</b><span>Interview questions</span></div>
+        <div class="stat"><b data-count="modules">0</b><span>Practice modules</span></div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Everything for the placement season</h2>
+          <p>Each module saves your results in the browser, so the Progress dashboard shows exactly where to focus next.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card feature">
+            <div class="ico">🧠</div>
+            <h3>Aptitude Quiz</h3>
+            <p>Timed quantitative, logical and verbal rounds with instant feedback and explanations.</p>
+            <a class="more" href="aptitude.html">Take a quiz →</a>
+          </article>
+          <article class="card feature">
+            <div class="ico">💻</div>
+            <h3>Coding Practice</h3>
+            <p>Write JavaScript in the browser and run it against test cases. Hints and solutions included.</p>
+            <a class="more" href="coding.html">Open sandbox →</a>
+          </article>
+          <article class="card feature">
+            <div class="ico">📄</div>
+            <h3>Resume Builder</h3>
+            <p>Fill in a form, watch the resume update live, check your resume score and save it as PDF.</p>
+            <a class="more" href="resume.html">Build resume →</a>
+          </article>
+          <article class="card feature">
+            <div class="ico">🎤</div>
+            <h3>Mock Interview</h3>
+            <p>Flip through HR, technical and behavioural questions with a timer and sample answers.</p>
+            <a class="more" href="interview.html">Practice now →</a>
+          </article>
+          <article class="card feature">
+            <div class="ico">📈</div>
+            <h3>Progress Dashboard</h3>
+            <p>See quiz history, problems solved and an overall readiness score at a glance.</p>
+            <a class="more" href="progress.html">View progress →</a>
+          </article>
+          <article class="card feature">
+            <div class="ico">🌙</div>
+            <h3>Dark &amp; Responsive</h3>
+            <p>Works on phones and laptops, with a dark mode that remembers your choice.</p>
+            <a class="more" href="#drives">See upcoming drives →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- DRIVES -->
+    <section class="section alt" id="drives">
+      <div class="container">
+        <div class="section-head">
+          <h2>Upcoming placement drives</h2>
+          <p>Sample data with fictional companies. Search or filter by sector.</p>
+        </div>
+        <div class="toolbar">
+          <input class="input" id="driveSearch" type="search" placeholder="Search company or role…" aria-label="Search drives">
+          <select class="input" id="driveType" aria-label="Filter by sector">
+            <option value="all">All sectors</option>
+            <option>IT</option><option>Analytics</option><option>Core</option><option>Finance</option>
+          </select>
+        </div>
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th>Company</th><th>Role</th><th>Sector</th><th>Package</th><th>Date</th><th></th></tr></thead>
+            <tbody id="driveBody"></tbody>
+          </table>
+        </div>
+        <p class="muted" id="driveEmpty" style="display:none;margin-top:12px">No drives match your filters.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container" style="max-width:720px">
+        <div class="section-head">
+          <h2>Send feedback</h2>
+          <p>Tell the placement cell what you would like to see added.</p>
+        </div>
+        <form class="card" id="feedbackForm" novalidate>
+          <div class="form-grid">
+            <div>
+              <label class="lbl" for="fbName">Name</label>
+              <input class="input" id="fbName" type="text" autocomplete="name">
+              <div class="field-error" id="fbNameErr"></div>
+            </div>
+            <div>
+              <label class="lbl" for="fbEmail">Email</label>
+              <input class="input" id="fbEmail" type="email" autocomplete="email">
+              <div class="field-error" id="fbEmailErr"></div>
+            </div>
+            <div class="full">
+              <label class="lbl" for="fbMsg">Message</label>
+              <textarea class="input" id="fbMsg"></textarea>
+              <div class="field-error" id="fbMsgErr"></div>
+            </div>
+          </div>
+          <button class="btn" type="submit" style="margin-top:8px">Submit feedback</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>© <span id="year"></span> PlacePrep · Built with the help of Generative AI</div>
+      <div><a href="aptitude.html">Aptitude</a> · <a href="coding.html">Coding</a> · <a href="resume.html">Resume</a> · <a href="interview.html">Interview</a></div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

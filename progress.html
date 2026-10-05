@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Progress – PlacePrep</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html"><span class="brand-mark">P</span> PlacePrep</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aptitude.html">Aptitude</a></li>
+        <li><a href="coding.html">Coding</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="interview.html">Interview</a></li>
+        <li><a class="active" href="progress.html">Progress</a></li>
+      </ul>
+      <div class="nav-tools">
+        <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode">🌙</button>
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container page-title">
+      <h1>Your Progress</h1>
+      <p class="muted">Everything is calculated from activity saved in this browser.</p>
+    </div>
+
+    <section class="section" style="padding-top:20px">
+      <div class="container">
+
+        <div class="card" style="margin-bottom:20px">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px">
+            <h3>Placement readiness</h3><b id="readyPct" style="font-size:1.6rem;color:var(--accent)">0%</b>
+          </div>
+          <div class="meter"><div id="readyBar"></div></div>
+          <p class="muted" id="readyMsg" style="margin-top:10px"></p>
+        </div>
+
+        <div class="stats" style="margin-bottom:20px">
+          <div class="stat"><b id="sQuizzes">0</b><span>Quizzes taken</span></div>
+          <div class="stat"><b id="sAvg">0%</b><span>Average quiz score</span></div>
+          <div class="stat"><b id="sSolved">0</b><span>Problems solved</span></div>
+          <div class="stat"><b id="sPracticed">0</b><span>Interview Qs practiced</span></div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3 style="margin-bottom:6px">Last 8 quiz scores</h3>
+            <div id="chartBox"></div>
+          </div>
+          <div class="card">
+            <h3 style="margin-bottom:10px">Average by round</h3>
+            <div id="catBox" style="display:grid;gap:14px"></div>
+          </div>
+        </div>
+
+        <div style="margin-top:24px;text-align:right">
+          <button class="btn btn-outline btn-sm" id="resetBtn">Reset all progress</button>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>© <span id="year"></span> PlacePrep · Built with the help of Generative AI</div>
+      <div><a href="index.html">Home</a> · <a href="aptitude.html">Take a quiz</a></div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/progress.js"></script>
+</body>
+</html>
